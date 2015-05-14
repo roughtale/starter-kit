@@ -69,11 +69,11 @@ gulp.task('copy', function () {
     '!app/js/*',
     '!app/less',
     'node_modules/amazeui/dist/**/*',
-    'node_modules/jquery/dist/cdn/*.js'
+    'node_modules/jquery/dist/*.*'
   ], {
     dot: true
   }).pipe(gulp.dest(function(file) {
-    if (file.relative.indexOf('jquery-2') > -1) {
+    if (file.relative.indexOf('jquery') > -1) {
       return 'dist/js';
     }
     return 'dist';
